@@ -1,0 +1,26 @@
+let display = document.querySelector(".display-scr");
+display.innerHTML = 0;
+
+let buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(function(button)
+{
+    button.addEventListener('click',function(e){
+        if(e.target.innerHTML=='C'){
+            display.innerHTML=0;
+
+        }else if(e.target.innerHTML=='='){
+                display.innerHTML = eval(display.innerHTML);
+        }else if(e.target.innerHTML == 'AC'){
+            display.innerHTML=0;
+        }else{
+            if( display.innerHTML=='0'){
+                display.innerHTML = '';
+            }
+            display.innerHTML+=e.target.innerHTML;
+        }
+    });
+});
+/*let checkbox = document.getElementById('checkbox');
+checkbox.addEventListener('change',())
+
